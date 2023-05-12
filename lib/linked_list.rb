@@ -24,6 +24,12 @@ class LinkedList
     end
 
     def to_string
-        #
+        current_node = @head
+        output_string = current_node.data
+        while current_node.next_node !=nil
+            current_node = current_node.next_node
+            output_string << " *{current_node.data}"
+        end
+        output_string
     end
 end

@@ -30,4 +30,22 @@ describe LinkedList do
             expect(list.head.next_node).to be_nil
         end
     end
+
+    describe 'count' do
+        it 'provides a count' do
+            list = LinkedList.new
+            list.append("doop")
+
+            expect(list.count).to eq 1
+        end
+    end
+
+    describe 'to_string' do
+        it 'outputs a list of all data elements' do
+            list = LinkedList.new
+            list.append("doop")
+
+            expect(list.to_string).to eq("doop")
+        end
+    end
 end

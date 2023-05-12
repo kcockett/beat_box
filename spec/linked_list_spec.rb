@@ -9,30 +9,25 @@ describe LinkedList do
         
             expect(list).to be_instance_of(LinkedList)
         end
-        
-        # it 'has accepts data' do
-        #     list = LinkedList.new("boom")
-        
-        #     expect(list.data).to eq("boom")
-        # end
-        
-        # it 'has no next_list' do
-        #     list = LinkedList.new("boom")
-        
-        #     expect(list.next_list).to eq(nil)
-        # end
-        
-        # it 'accepts only one data element' do
-        #     list = LinkedList.new("boom tit boom")
-        
-        #     expect(list.data).to eq("boom")
-        # end
+        it 'head is nil' do
+            list = LinkedList.new
 
-        # it 'accepts only string data' do
-        #     list = LinkedList.new(123)
-        
-        #     expect(list.data.class).to eq(String)
-        # end
+            expect(list.head).to be_nil
+        end
+    end
 
+    describe 'append' do
+        it 'data appends to the end of the list' do
+            list = LinkedList.new
+            list.append("doop")
+
+            expect(list.head.data).to eq("doop")
+        end
+        it 'next node is nil' do
+            list = LinkedList.new
+            list.append("doop")
+
+            expect(list.head.next_node).to be_nil
+        end
     end
 end

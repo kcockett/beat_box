@@ -3,7 +3,7 @@ require "./lib/node"
 require "rspec"
 
 describe LinkedList do
-    describe '#initialize' do
+    describe '#initialize method' do
         it 'exists' do
             list = LinkedList.new
         
@@ -16,7 +16,7 @@ describe LinkedList do
         end
     end
 
-    describe 'append' do
+    describe 'append method' do
         it 'data appends to the end of the list' do
             list = LinkedList.new
             list.append("doop")
@@ -31,7 +31,7 @@ describe LinkedList do
         end
     end
 
-    describe 'count' do
+    describe 'count method' do
         it 'provides a count' do
             list = LinkedList.new
             list.append("doop")
@@ -40,7 +40,7 @@ describe LinkedList do
         end
     end
 
-    describe 'to_string' do
+    describe 'to_string method' do
         it 'outputs a list of all data elements' do
             list = LinkedList.new
             list.append("doop")

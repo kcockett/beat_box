@@ -5,4 +5,6 @@ list = LinkedList.new
 list.append("doop")
 list.count
 
+#list.append("deep")
+
 require 'pry'; binding.pry

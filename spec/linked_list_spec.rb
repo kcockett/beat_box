@@ -1,5 +1,6 @@
-require './lib/linked_list.rb'
-require 'rspec'
+require "./lib/linked_list.rb"
+require "./lib/node"
+require "rspec"
 
 describe LinkedList do
     describe '#initialize' do
@@ -7,30 +8,31 @@ describe LinkedList do
             list = LinkedList.new
         
             expect(list).to be_instance_of(LinkedList)
-          end
+        end
         
-          it 'has accepts data' do
-            list = LinkedList.new("boom")
+        # it 'has accepts data' do
+        #     list = LinkedList.new("boom")
         
-            expect(list.data).to eq("boom")
-          end
+        #     expect(list.data).to eq("boom")
+        # end
         
-          it 'has no next_list' do
-            list = LinkedList.new("boom")
+        # it 'has no next_list' do
+        #     list = LinkedList.new("boom")
         
-            expect(list.next_list).to eq(nil)
-          end
+        #     expect(list.next_list).to eq(nil)
+        # end
         
-          it 'accepts only one data element' do
-            list = LinkedList.new("boom tit boom")
+        # it 'accepts only one data element' do
+        #     list = LinkedList.new("boom tit boom")
         
-            expect(list.data).to eq("boom")
-          end
-          it 'accepts only string data' do
-            list = LinkedList.new(123)
+        #     expect(list.data).to eq("boom")
+        # end
+
+        # it 'accepts only string data' do
+        #     list = LinkedList.new(123)
         
-            expect(list.data.class).to eq(String)
-          end
+        #     expect(list.data.class).to eq(String)
+        # end
 
     end
 end

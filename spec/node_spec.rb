@@ -1,5 +1,5 @@
-require './lib/node.rb'
-require 'rspec'
+require "./lib/node.rb"
+require "rspec"
 
 describe Node do
     describe '#initialize' do
@@ -9,7 +9,7 @@ describe Node do
             expect(node).to be_instance_of(Node)
           end
         
-          it 'has accepts data' do
+          it 'accepts data' do
             node = Node.new("boom")
         
             expect(node.data).to eq("boom")

@@ -7,11 +7,11 @@ class LinkedList
     end
 
     def append(data)
-        if !@head
+        if !@head # If there is no head, create a new node
             @head = Node.new (data)
         else
             current_node = @head
-            while current_node.next_node !=nil
+            while current_node.next_node !=nil # Find the last node
                 current_node = current_node.next_node
             end
             current_node.next_node = Node.new (data)
@@ -20,9 +20,9 @@ class LinkedList
     end
 
     def count
-        if !@head
+        if !@head # If there is no head, return 0
             counter = 0
-        else
+        else # Count the number of nodes
             counter = 1
             current_node = @head
             while current_node.next_node !=nil
@@ -34,10 +34,10 @@ class LinkedList
     end
 
     def to_string
-        if @head
+        if @head # Only run if the list is not empty
             current_node = @head
             output_string = current_node.data
-            while current_node.next_node !=nil
+            while current_node.next_node !=nil # Work through all nodes and shovel to the output string
                 current_node = current_node.next_node
                 output_string << " #{current_node.data}"
             end
@@ -51,5 +51,23 @@ class LinkedList
         old_head = @head
         @head = Node.new(data)
         @head.next_node = old_head
+    end
+
+    def insert(position, data)
+        if position == 0 # Inserting at 0 is the same as prepend
+            prepend(data)
+        elsif position == count
+            append(data)
+        elsif position > 0 && position < count
+            current_node = @head
+            (position - 1).times do
+                current_node = current_node.next_node
+            end
+            old_next_node = current_node.next_node
+            current_node.next_node = Node.new(data)
+            current_node.next_node.next_node = old_next_node
+        else
+            puts "Invalid position"
+        end
     end
 end

@@ -7,4 +7,6 @@ list.count
 
 #list.append("deep")
 
-require 'pry'; binding.pry
+
+
+#require 'pry'; binding.pry

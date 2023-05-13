@@ -58,4 +58,15 @@ describe LinkedList do
             expect(list.to_string).to eq("doop deep")
         end
     end
+
+    describe 'insert method' do
+        it 'inserts a node at the head of the list' do
+            list = LinkedList.new
+            list.append("plop")
+            list.append("suu")
+            list.prepend("dop")
+
+            expect(list.head.data).to eq("dop")
+        end
+    end
 end

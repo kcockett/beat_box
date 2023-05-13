@@ -46,4 +46,10 @@ class LinkedList
             puts "List is empty"
         end
     end
+
+    def prepend(data)
+        old_head = @head
+        @head = Node.new(data)
+        @head.next_node = old_head
+    end
 end

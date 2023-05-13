@@ -59,7 +59,7 @@ describe LinkedList do
         end
     end
 
-    describe 'insert method' do
+    describe 'prepend method' do
         it 'inserts a node at the head of the list' do
             list = LinkedList.new
             list.append("plop")
@@ -67,6 +67,18 @@ describe LinkedList do
             list.prepend("dop")
 
             expect(list.head.data).to eq("dop")
+        end
+    end
+
+    describe 'insert method' do
+        it 'inserts a node at any point of the list' do
+            list = LinkedList.new
+            list.append("plop")
+            list.append("suu")
+            list.prepend("dop")
+            list.insert(1, "woo")
+
+            expect(list.to_string).to eq("dop woo plop suu")
         end
     end
 end

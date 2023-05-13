@@ -22,6 +22,7 @@ describe LinkedList do
             list.append("doop")
 
             expect(list.head.data).to eq("doop")
+
         end
         it 'next node is nil' do
             list = LinkedList.new
@@ -29,14 +30,22 @@ describe LinkedList do
 
             expect(list.head.next_node).to be_nil
         end
+        it 'second node is inserted after the head item' do
+            list = LinkedList.new
+            list.append("doop")
+            list.append("deep")
+
+            expect(list.head.next_node).to be_instance_of(Node)
+        end
     end
 
     describe 'count method' do
         it 'provides a count' do
             list = LinkedList.new
             list.append("doop")
+            list.append("deep")
 
-            expect(list.count).to eq 1
+            expect(list.count).to eq 2
         end
     end
 
@@ -44,8 +53,9 @@ describe LinkedList do
         it 'outputs a list of all data elements' do
             list = LinkedList.new
             list.append("doop")
+            list.append("deep")
 
-            expect(list.to_string).to eq("doop")
+            expect(list.to_string).to eq("doop deep")
         end
     end
 end

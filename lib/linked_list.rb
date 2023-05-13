@@ -9,15 +9,10 @@ class LinkedList
     def append(data)
         if !@head
             @head = Node.new (data)
-            puts "Added first node"
         else
             current_node = @head
-            puts "Adding another node after #{current_node} which contains '#{current_node.data}'"
-            puts "  and next_node is '#{current_node.next_node}'"
-
             while current_node.next_node !=nil
                 current_node = current_node.next_node
-                puts "iterating..."
             end
             current_node.next_node = Node.new (data)
         end

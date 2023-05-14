@@ -70,4 +70,24 @@ class LinkedList
             puts "Invalid position"
         end
     end
+
+    def find(node_position, number_elements)
+        if node_position < count && node_position >= 0
+            output_string = ""
+            current_node = @head
+            node_position.times do
+                current_node = current_node.next_node
+            end
+            number_elements.times do |i|
+                output_string << current_node.data
+                if current_node.next_node !=nil && i < number_elements-1
+                    output_string << " "
+                end
+                current_node = current_node.next_node
+            end
+            output_string
+        else
+            puts "Invalid position"
+        end
+    end
 end

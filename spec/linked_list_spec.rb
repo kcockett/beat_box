@@ -81,4 +81,18 @@ describe LinkedList do
             expect(list.to_string).to eq("dop woo plop suu")
         end
     end
+
+    describe 'find method' do
+        it 'finds the node at given location and returns additional elements from there' do
+            list = LinkedList.new
+            list.append("deep")
+            list.append("woo")
+            list.append("shi")
+            list.append("shu")
+            list.append("blop")
+
+            expect(list.find(2,1)).to eq("shi")
+            expect(list.find(1,3)).to eq("woo shi shu")
+        end
+    end
 end

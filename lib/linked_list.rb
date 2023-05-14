@@ -72,7 +72,7 @@ class LinkedList
     end
 
     def find(node_position, number_elements)
-        if node_position < count && node_position >= 0
+        if node_position < count && node_position >= 0 #Make sure that the position is within the list
             output_string = ""
             current_node = @head
             node_position.times do
@@ -89,5 +89,20 @@ class LinkedList
         else
             puts "Invalid position"
         end
+    end
+
+    def includes?(data)
+        found_node = false
+        if @head # Make sure list is not empty, otherwise iterate through all nodes
+            current_node = @head
+            count.times do |i|
+                if current_node.data == data
+                    found_node = true
+                    break
+                end
+                current_node = current_node.next_node
+            end
+        end
+        found_node
     end
 end

@@ -18,7 +18,6 @@ class BeatBox
     end
 
     def append(data)
-
         data.split.each do |item| # parse out inividual data entries
             allowed_words = File.readlines('./allowed_word_list.txt').map(&:chomp)
             if allowed_words.include?(item) # check if item is in allowed_word_list
@@ -43,7 +42,6 @@ class BeatBox
     end
 
     def prepend(data)
-        
         data.split.each do |item| # parse out inividual data entries
             allowed_words = File.readlines('./allowed_word_list.txt').map(&:chomp)
             if allowed_words.include?(item) # check if item is in allowed_word_list
@@ -51,6 +49,10 @@ class BeatBox
             end
         end
         data
+    end
+
+    def reset_rate
+        @rate = 500
     end
 
 end

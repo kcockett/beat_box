@@ -11,4 +11,8 @@ class BeatBox
     def append(data)
         list.append(data)
     end
+
+    def count
+        list.count
+    end
 end

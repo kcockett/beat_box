@@ -27,6 +27,7 @@ describe BeatBox do
 
             expect(bb.count).to eq(6)
         end
+
     end
 
 end

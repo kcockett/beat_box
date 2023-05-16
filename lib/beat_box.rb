@@ -18,4 +18,9 @@ class BeatBox
     def count
         list.count
     end
+
+    def play
+        beats = list.to_string
+        `say #{beats}`
+    end
 end

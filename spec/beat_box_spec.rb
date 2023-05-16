@@ -12,6 +12,14 @@ describe BeatBox do
             expect(bb.list.head).to eq nil
         end
 
+        it 'allows arguement for first node creation' do
+            bb = BeatBox.new ("deep")
+
+            expect(bb.list.head.data).to eq "deep"
+        end
+    end
+
+    describe "#append" do
         it 'can append to bb.list' do
             bb = BeatBox.new
             expect(bb.append("deep doo ditt")).to eq ("deep doo ditt")
@@ -19,7 +27,13 @@ describe BeatBox do
             expect(bb.list.head.next_node.data).to eq ("doo")
             expect(bb.append("woo hoo shu")).to eq ("woo hoo shu")
         end
-        
+
+        it 'only accepts restricted list of strings' do
+            bb = BeatBox.new("deep")
+        end
+    end
+
+    describe "#count" do
         it 'can count nodes' do
             bb = BeatBox.new
             bb.append("deep doo ditt")
@@ -27,7 +41,8 @@ describe BeatBox do
 
             expect(bb.count).to eq(6)
         end
-
     end
+
+
 
 end

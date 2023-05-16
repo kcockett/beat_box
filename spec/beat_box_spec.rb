@@ -61,6 +61,14 @@ describe BeatBox do
 
     end
 
+    describe "#play" do
+        it 'returns number of nodes played' do
+            bb = BeatBox.new("deep dop dop deep")
+
+            expect(bb.play).to eq(4)
+        end
+    end
+
 
 
 end

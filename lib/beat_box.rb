@@ -39,5 +39,15 @@ class BeatBox
         list.to_string
     end
 
+    def prepend(data)
+        allowed_word_list = ["tee", "dee", "deep", "bop", "boop", "la", "na", "doo", "ditt", "woo", "hoo", "shu", "dop"]
+
+        data.split.each do |item| # parse out inividual data entries
+            if allowed_word_list.include?(item) # check if item is in allowed_word_list
+                list.prepend(item)
+            end
+        end
+        data
+    end
 
 end

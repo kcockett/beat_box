@@ -1,11 +1,7 @@
-class Person
-    attr_accessor :name, :age
+require "./lib/beat_box"
+require "./lib/linked_list"
+require "./lib/node"
 
-    def initialize(name = '')
-        self.name = name
-    end
-end
+bb = BeatBox.new("deep dop dop deep")
 
-p Person.new
-
-p Person.new('Ivan')
+require 'pry'; binding.pry

@@ -33,7 +33,7 @@ class BeatBox
 
     def play
         beats = list.to_string
-        `say #{beats}`
+        `say -r #{@rate} -v #{@voice} #{beats}`
         beats.split.size
     end
 

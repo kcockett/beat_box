@@ -16,10 +16,10 @@ class BeatBox
     end
 
     def append(data)
-        allowed_word_list = ["tee", "dee", "deep", "bop", "boop", "la", "na", "doo", "ditt", "woo", "hoo", "shu", "dop"]
 
         data.split.each do |item| # parse out inividual data entries
-            if allowed_word_list.include?(item) # check if item is in allowed_word_list
+            allowed_words = File.readlines('./allowed_word_list.txt').map(&:chomp)
+            if allowed_words.include?(item) # check if item is in allowed_word_list
                 list.append(item)
             end
         end
@@ -40,10 +40,10 @@ class BeatBox
     end
 
     def prepend(data)
-        allowed_word_list = ["tee", "dee", "deep", "bop", "boop", "la", "na", "doo", "ditt", "woo", "hoo", "shu", "dop"]
-
+        
         data.split.each do |item| # parse out inividual data entries
-            if allowed_word_list.include?(item) # check if item is in allowed_word_list
+            allowed_words = File.readlines('./allowed_word_list.txt').map(&:chomp)
+            if allowed_words.include?(item) # check if item is in allowed_word_list
                 list.prepend(item)
             end
         end

@@ -55,6 +55,7 @@ describe BeatBox do
 
             expect(bb.all).to eq("deep doo ditt")
         end
+        
     end
 
 

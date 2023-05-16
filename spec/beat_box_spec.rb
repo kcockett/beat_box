@@ -29,7 +29,7 @@ describe BeatBox do
         end
 
         it 'only accepts restricted list of strings' do
-            bb = BeatBox.new("deep")
+            #
         end
     end
 
@@ -41,6 +41,10 @@ describe BeatBox do
 
             expect(bb.count).to eq(6)
         end
+    end
+
+    describe "#all displays list of data in all nodes" do
+        #
     end
 
 

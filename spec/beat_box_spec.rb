@@ -15,16 +15,18 @@ describe BeatBox do
         it 'can append to bb.list' do
             bb = BeatBox.new
             expect(bb.list.append("deep doo ditt")).to eq ("deep doo ditt")
-            require 'pry'; binding.pry
             expect(bb.list.head.data).to eq ("deep")
             expect(bb.list.head.next_node.data).to eq ("doo")
+            expect(bb.append("woo hoo shu")).to eq ("woo hoo shu")
+        end
+
+        it 'can count nodes' do
+            bb = BeatBox.new
+            bb.list.append("deep doo ditt")
+            bb.append("woo hoo shu")
+
+            expect(bb.count).to eq(6)
         end
     end
 
 end
-
-            # 
-            # 
-            # 
-            # expect(bb.append("woo hoo shu")).to eq ("woo hoo shu")
-            # expect(bb.count).to eq(6)

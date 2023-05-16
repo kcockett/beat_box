@@ -4,7 +4,7 @@ require "./lib/linked_list"
 class BeatBox
 
     
-    attr_accessor :list
+    attr_accessor :list, :rate, :voice
     
     def initialize(first_nodes='')
         if first_nodes.empty? # check if any argument is given
@@ -13,6 +13,8 @@ class BeatBox
             @list = LinkedList.new
             append(first_nodes)
         end
+        @rate = 500
+        @voice = "Boing"
     end
 
     def append(data)

@@ -64,10 +64,18 @@ describe BeatBox do
     describe "#play" do
         it 'returns number of nodes played' do
             bb = BeatBox.new("deep dop dop deep")
+
             expect(bb.play).to eq(4)
         end
     end
 
+    describe "#reset_rate" do
+        it 'resets rate to 500' do
+            bb = BeatBox.new("deep dop dop deep")
+            bb.rate = 100
 
+            expect(bb.reset_rate).to eq(500)
+        end
+    end
 
 end

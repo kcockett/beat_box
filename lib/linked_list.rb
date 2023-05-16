@@ -7,16 +7,14 @@ class LinkedList
     end
 
     def append(data)
-        data.split.each do |item|
-            if !@head # If there is no head, create a new node
-                @head = Node.new (data[item])
-            else
-                current_node = @head
-                while current_node.next_node !=nil # Find the last node
-                    current_node = current_node.next_node
-                end
-                current_node.next_node = Node.new (data[item])
+        if !@head # If there is no head, create a new node
+            @head = Node.new (data)
+        else
+            current_node = @head
+            while current_node.next_node !=nil # Find the last node
+                current_node = current_node.next_node
             end
+            current_node.next_node = Node.new (data)
         end
         data
     end

@@ -1,4 +1,4 @@
-require "./lib/linked_list.rb"
+require "./lib/linked_list"
 require "./lib/node"
 require "rspec"
 
@@ -124,4 +124,5 @@ describe LinkedList do
             expect(list.to_string).to eq "deep woo shi"
         end
     end
+    
 end

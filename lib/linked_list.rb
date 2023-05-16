@@ -34,17 +34,14 @@ class LinkedList
     end
 
     def to_string
-        if @head # Only run if the list is not empty
-            current_node = @head
-            output_string = current_node.data
-            while current_node.next_node !=nil # Work through all nodes and shovel to the output string
-                current_node = current_node.next_node
-                output_string << " #{current_node.data}"
-            end
-            output_string
-        else
-            puts "List is empty"
+        output_string = ""
+        current_node = @head # Start at the first node
+        while current_node.next_node != nil # Work through all nodes and shovel data to the output string
+            output_string << "#{current_node.data} "
+            current_node = current_node.next_node
         end
+        output_string << "#{current_node.data}" # Insert last node data
+        return output_string
     end
 
     def prepend(data)
@@ -104,5 +101,19 @@ class LinkedList
             end
         end
         found_node
+    end
+
+    def pop
+        if @head # Make sure list is not empty
+            current_node = @head
+            while current_node.next_node.next_node != nil # Find the last node
+                current_node = current_node.next_node
+            end
+            last_node = current_node.next_node # Setup the final return value
+            current_node.next_node = nil # Blank the last node
+            return last_node.data
+        else
+            puts "List is empty"
+        end
     end
 end

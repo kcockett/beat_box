@@ -119,9 +119,7 @@ describe LinkedList do
             list.append("shu")
             list.append("blop")
 
-            list.pop
             expect(list.pop).to eq "blop"
-            list.pop
             expect(list.pop).to eq "shu"
             expect(list.to_string).to eq "deep woo shi"
         end

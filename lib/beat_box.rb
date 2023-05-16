@@ -55,4 +55,8 @@ class BeatBox
         @rate = 500
     end
 
+    def reset_voice
+        @voice = "Boing"
+    end
+
 end

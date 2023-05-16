@@ -78,4 +78,13 @@ describe BeatBox do
         end
     end
 
+    describe "#reset_voice" do
+        it 'resets voice to Boing' do
+            bb = BeatBox.new("deep dop dop deep")
+            bb.voice = "Daniel"
+
+            expect(bb.reset_voice).to eq("Boing")
+        end
+    end
+
 end

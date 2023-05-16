@@ -2,8 +2,13 @@ require "./lib/node"
 require "./lib/linked_list"
 
 class BeatBox
-    attr_reader :head
+    attr_reader :list
+    
     def initialize
         @list = LinkedList.new
+    end
+
+    def append(data)
+        list.append(data)
     end
 end

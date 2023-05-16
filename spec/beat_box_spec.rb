@@ -33,6 +33,9 @@ describe BeatBox do
             bb.append("Mississippi")
             
             expect(bb.all).to eq ("deep")
+
+            bb.prepend("tee tee tee Mississippi")
+            expect(bb.all).to eq ("tee tee tee deep")
         end
     end
 
@@ -55,7 +58,7 @@ describe BeatBox do
 
             expect(bb.all).to eq("deep doo ditt")
         end
-        
+
     end
 
 

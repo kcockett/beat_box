@@ -29,7 +29,10 @@ describe BeatBox do
         end
 
         it 'only accepts restricted list of strings' do
-            #
+            bb = BeatBox.new("deep")
+            bb.append("Mississippi")
+            
+            expect(bb.all).to eq ("deep")
         end
     end
 
@@ -43,8 +46,15 @@ describe BeatBox do
         end
     end
 
-    describe "#all displays list of data in all nodes" do
-        #
+    describe "#all " do
+        it 'displays list of data in all nodes' do
+            bb = BeatBox.new
+            bb.append("deep")
+            bb.append("doo")
+            bb.append("ditt")
+
+            expect(bb.all).to eq("deep doo ditt")
+        end
     end
 
 

@@ -2,10 +2,12 @@ require "./lib/node"
 require "./lib/linked_list"
 
 class BeatBox
+
+    
     attr_accessor :list
     
     def initialize(first_nodes='')
-        if first_nodes.empty?
+        if first_nodes.empty? # check if any argument is given
             @list = LinkedList.new
         else
             @list = LinkedList.new
@@ -14,8 +16,12 @@ class BeatBox
     end
 
     def append(data)
-        data.split.each do |item|
-            list.append(item)
+        allowed_word_list = ["tee", "dee", "deep", "bop", "boop", "la", "na", "doo", "ditt", "woo", "hoo", "shu", "dop"]
+
+        data.split.each do |item| # parse out inividual data entries
+            if allowed_word_list.include?(item) # check if item is in allowed_word_list
+                list.append(item)
+            end
         end
         data
     end
@@ -27,6 +33,10 @@ class BeatBox
     def play
         beats = list.to_string
         `say #{beats}`
+    end
+
+    def all
+        list.to_string
     end
 
 
